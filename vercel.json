@@ -1,7 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/", "destination": "/ordina-stella-24.html" },
-    { "source": "/ordina", "destination": "/ordina-stella-24.html" },
-    { "source": "/admin", "destination": "/admin-1-2.html" }
-  ]
-}
