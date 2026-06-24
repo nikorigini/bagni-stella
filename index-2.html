@@ -40,12 +40,19 @@ header p{margin:6px 0 0;opacity:.85}
 .tot-row.finale{font-size:22px;border-top:2px solid #2e68b2}
 .disc{text-align:center;color:#6b6b6b;font-size:12px;margin-top:10px;font-style:italic}
 footer{text-align:center;color:#6b6b6b;font-size:12px;padding:25px 18px 90px}
-.prodotto-combo{background:linear-gradient(135deg,#0f2845,#2e68b2);border:none;color:white;border-radius:14px;padding:16px 15px;margin-bottom:12px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;box-shadow:0 4px 15px #2e68b244}
+.prodotto-combo{background:linear-gradient(135deg,#0f2845,#2e68b2);border:2px solid #ffd700;color:white;border-radius:14px;padding:16px 15px;margin-bottom:12px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;box-shadow:0 6px 18px #0f284555;position:relative}
 .prodotto-combo h3{font-family:Georgia,serif;margin:0 0 5px;font-size:18px;color:white}
 .prodotto-combo p{margin:0 0 8px;color:rgba(255,255,255,0.8);font-size:13px;line-height:1.35}
 .prodotto-combo strong{font-family:Georgia,serif;color:#ffd700;font-size:20px;display:block}
-.prodotto-combo .tag{background:rgba(255,255,255,0.2);color:white}
-.prodotto-combo .add{background:white;color:#2e68b2;font-weight:800}
+.prodotto-combo .tag{background:#ffd700;color:#0f2845;font-weight:800}
+.prodotto-combo .add{background:#ffd700;color:#0f2845;font-weight:800}
+.sez-piattini{background:#fff8e8;margin:0 -18px;padding:18px 18px 20px;border-bottom:2px solid #e8d49a}
+.sez-piattini h2{color:#0f2845;font-family:Georgia,serif;font-size:21px;margin:0 0 4px}
+.sez-piattini .sottotit-pt{color:#8a6d2a;font-size:13px;font-style:italic;margin:0 0 14px}
+.prodotto-pt{background:white;border:1.5px solid #e8d49a;border-radius:12px;padding:14px 15px;margin-bottom:10px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;box-shadow:0 2px 8px #0000000d}
+.prodotto-pt h3{font-family:Georgia,serif;margin:0 0 4px;font-size:16px;color:#0f2845}
+.prodotto-pt p{margin:0 0 6px;color:#8a7a64;font-size:13px}
+.prodotto-pt strong{font-family:Georgia,serif;color:#2e68b2;font-size:18px;display:block}
 .sez-combo{background:linear-gradient(135deg,#0f2845 0%,#1a3a6b 100%);margin:0 -18px;padding:20px 18px 22px;border-bottom:3px solid #ffd700}
 .sez-combo h2{color:white;font-family:Georgia,serif;font-size:25px;margin:0 0 4px}
 .sez-combo .sottotit-combo{color:rgba(255,255,255,0.75);font-size:13px;font-style:italic;margin:0 0 16px}
@@ -91,6 +98,7 @@ footer{text-align:center;color:#6b6b6b;font-size:12px;padding:25px 18px 90px}
 
 <nav class="tabs">
   <a href="#s0">Combo</a>
+  <a href="#spt">Piattini</a>
   <a href="#s1">Dolcezze</a>
   <a href="#s2">Caffe&grave;</a>
   <a href="#s3">Panini</a>
@@ -112,6 +120,13 @@ footer{text-align:center;color:#6b6b6b;font-size:12px;padding:25px 18px 90px}
 <div class="prodotto-combo"><div><h3>Mangia Liguria <em class="tag">L'Oste</em></h3><p>Acciughe impanate + birra piccola.</p><strong>&#8364; 14,00</strong></div><button class="add" onclick="aggiungi('pl','Mangia Liguria',14.00)">+</button></div>
 <div class="prodotto-combo"><div><h3>Pranzo Liguria <em class="tag">L'Oste</em></h3><p>Piatto freddo del giorno + calice di vino.</p><strong>&#8364; 15,00</strong></div><button class="add" onclick="aggiungi('prl','Pranzo Liguria',15.00)">+</button></div>
 <div class="prodotto-combo"><div><h3>Aperitivo Stella <em class="tag">L'Oste</em></h3><p>Drink a scelta + tagliere de l'Oste.</p><strong>&#8364; 15,00</strong></div><button class="add" onclick="aggiungi('as','Aperitivo Stella',15.00)">+</button></div>
+</section>
+
+<section class="sez-piattini" id="spt">
+<h2>Piattini dell'Oste &#x1F37D;&#xFE0F;</h2>
+<p class="sottotit-pt">Da accompagnare al tuo drink.</p>
+<div class="prodotto-pt"><div><h3>Piattino dell'Oste</h3><p>Selezione delle nostre specialita.</p><strong>&#8364; 5,00</strong></div><button class="add" onclick="aggiungi('pt5','Piattino dell\'Oste',5.00)">+</button></div>
+<div class="prodotto-pt"><div><h3>Piattino Speciale</h3><p>Selezione delle nostre specialita.</p><strong>&#8364; 8,00</strong></div><button class="add" onclick="aggiungi('pt8','Piattino Speciale',8.00)">+</button></div>
 </section>
 
 <section class="sezione" id="s1">
@@ -438,7 +453,7 @@ var adminPwd = "stella2026";
 var esauritiOggi = [];
 
 var TUTTI_PRODOTTI = [
-  {cat:"Combo",id:"ps",nome:"Pausa Stella"},{cat:"Combo",id:"pl",nome:"Mangia Liguria"},{cat:"Combo",id:"prl",nome:"Pranzo Liguria"},{cat:"Combo",id:"as",nome:"Aperitivo Stella"},
+  {cat:"Combo",id:"ps",nome:"Pausa Stella"},{cat:"Combo",id:"pl",nome:"Mangia Liguria"},{cat:"Combo",id:"prl",nome:"Pranzo Liguria"},{cat:"Combo",id:"as",nome:"Aperitivo Stella"},{cat:"Piattini",id:"pt5",nome:"Piattino dell'Oste"},{cat:"Piattini",id:"pt8",nome:"Piattino Speciale"},
   {cat:"Colazioni",id:"mac",nome:"Macedonia"},{cat:"Colazioni",id:"pan",nome:"Pancake"},{cat:"Colazioni",id:"fru",nome:"Frullato + biscotto"},{cat:"Colazioni",id:"crf",nome:"Crema Fredda"},{cat:"Colazioni",id:"yog",nome:"Coppe Yogurt"},{cat:"Colazioni",id:"cfs",nome:"Caffe Salentina"},{cat:"Colazioni",id:"fag",nome:"Fagotto artigianale"},{cat:"Colazioni",id:"can",nome:"Cannolo artigianale"},{cat:"Colazioni",id:"str",nome:"Strudel"},{cat:"Colazioni",id:"bud",nome:"Budini"},
   {cat:"Caffe",id:"esp",nome:"Espresso"},{cat:"Caffe",id:"dec",nome:"Decaffeinato"},{cat:"Caffe",id:"cor",nome:"Corretto"},{cat:"Caffe",id:"ame",nome:"Americano"},{cat:"Caffe",id:"mar",nome:"Marocchino"},{cat:"Caffe",id:"mcn",nome:"Marocchino Nocciola"},{cat:"Caffe",id:"mcp",nome:"Marocchino Pistacchio"},{cat:"Caffe",id:"op",nome:"Orzo piccolo"},{cat:"Caffe",id:"gp",nome:"Ginseng piccolo"},{cat:"Caffe",id:"gg",nome:"Ginseng grande"},{cat:"Caffe",id:"cap",nome:"Cappuccino"},{cat:"Caffe",id:"cad",nome:"Cappuccino dec"},{cat:"Caffe",id:"cao",nome:"Cappuccino orzo"},{cat:"Caffe",id:"lmp",nome:"Latte macchiato piccolo"},{cat:"Caffe",id:"lmg",nome:"Latte macchiato grande"},{cat:"Caffe",id:"lmv",nome:"Latte macchiato vegetale"},{cat:"Caffe",id:"teb",nome:"Te caldo"},{cat:"Caffe",id:"csh",nome:"Shakerato"},{cat:"Caffe",id:"csb",nome:"Shakerato Baileys"},
   {cat:"Panini",id:"pia",nome:"Piadina"},{cat:"Panini",id:"ris",nome:"Risacca"},{cat:"Panini",id:"tre",nome:"Trespolo"},{cat:"Panini",id:"bag",nome:"Bagnino"},{cat:"Panini",id:"can2",nome:"Canoa"},{cat:"Panini",id:"mol",nome:"Molo del Surf"},{cat:"Panini",id:"toa",nome:"Toast"},{cat:"Panini",id:"tr1",nome:"Tramezzino n.1"},
